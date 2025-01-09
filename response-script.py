@@ -110,7 +110,7 @@ else:
 query = {  
     "conversation": [    
         {      
-            "question": 
+            "question": f'{text_value}'
         }  
     ],  
     "conversation_id": "6589527a-c2ca-4e8b-9999-917565ab0382",  
@@ -118,36 +118,32 @@ query = {
 }
 
 
-# Make a GET request to the LOKI API endpoint using the api_post() function
+# Make a POST request to the LOKI API endpoint using the api_post() function
+print(api_post(query))  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Extract the chatbot answer from the response
-if response:
-    try:
-        chatbot_answer = response['query']['data']['locatieserver']['nummeraanduidingen'][0]['hoofdadresvan'][0]['perceel'][0]['chatbotanswer']
-        print(chatbot_answer)
-    except (KeyError, IndexError) as e:
-        print('Error accessing chatbotanswer:', e)
-else:
-    print('No response received')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# if response:
+#     try:
+#         chatbot_answer = response['query']['data']['locatieserver']['nummeraanduidingen'][0]['hoofdadresvan'][0]['perceel'][0]['chatbotanswer']
+#         print(chatbot_answer)
+#     except (KeyError, IndexError) as e:
+#         print('Error accessing chatbotanswer:', e)
+# else:
+#     print('No response received')
 
 
 # Example data dictionary to send in the POST request
